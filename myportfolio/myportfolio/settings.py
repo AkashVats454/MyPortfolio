@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'flnt8d!g-sj(2&%l=4!0e=q!exdjwf$50azdarx9te0o16c1wx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'akashmishra454@gmail.com'
@@ -130,10 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR,'static')
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_FILES = '/media/'
