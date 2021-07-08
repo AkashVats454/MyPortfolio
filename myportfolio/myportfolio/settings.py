@@ -30,7 +30,13 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'akashmishra454@gmail.com'
 
 
-ALLOWED_HOSTS = ["https://akashtesting.herokuapp.com/", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    'https://akashtesting.herokuapp.com',
+    'https://akashtesting.herokuapp.com/',
+    'http://akashtesting.herokuapp.com',
+    'akashtesting.herokuapp.com',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -127,11 +133,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
-# if DEBUG:
-#    STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static'),
-#    ]
-# else:
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 MEDIA_URL = '/media/'
