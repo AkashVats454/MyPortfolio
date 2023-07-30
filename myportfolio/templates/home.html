@@ -30,7 +30,7 @@
                         <div class="line"></div>
                         <h4>{{ about.short_description }}</h4>
                         <p>{{ about.description }}</p>
-                        <a href="media/about/Akash_Mishra - Python Developer.pdf" download>Download CV&nbsp;<i class="fa fa-download"></i></a>
+                        <a href="media/about/Akash_Mishra - Python_Developer.docx" download>Download CV&nbsp;<i class="fa fa-download"></i></a>
                     </div>
                 </div>
                 <div class="col-md-5 visible-md visible-lg wow fadeInDown" data-wow-delay="0.6s">
@@ -134,16 +134,18 @@
                                 <div class="col-md-6">
                                     <div class="form-group wow fadeInDown" data-wow-delay="0.2s">
                                         <input id="form_name" type="text" name="full_name" class="form-control"
+                                               onkeyup="success_name()"
                                                placeholder="Enter your full name *" required="required"
-                                               data-error="Fullname is required.">
+                                               data-error="Fullname is required." disabled>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group wow fadeInDown" data-wow-delay="0.4s">
                                         <input id="form_email" type="email" name="email" class="form-control"
+                                               onkeyup="success_mail()"
                                                placeholder="Enter your email *" required="required"
-                                               data-error="Valid email is required.">
+                                               data-error="Valid email is required." disabled>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -152,14 +154,41 @@
                                 <div class="col-md-12">
                                     <div class="form-group wow fadeInUp" data-wow-delay="0.6s">
                                         <textarea id="form_message" name="messages" class="form-control"
-                                                  placeholder="Your Message *" rows="4" required="required"
-                                                  data-error="Leave a message for me"></textarea>
+                                                  onkeyup="success_text()"
+                                                  placeholder="APOLOGIES!! Intentionally disabled these fields as gmail less Secure app is not working after 30 May 2022. working on this. PLEASE EMAIL ME at my Gmail id AKASHMISHRA454@GMAIL.COM" rows="4" required="required"
+                                                  data-error="Leave a message for me" disabled></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                           <!--          <input class="btn btn-send" type="submit" value="Post"/>   -->
-                                    <button class="btn btn-send" value="Post" onclick=alert("I am an alert box!")>Send message</button>
+                                    <button class="btn btn-send" id="button" value="Post" onclick=alertFucntion() disabled>Send message</button>
+                                    <script>
+                                    function alertFucntion() {
+                                    alert("Email has been sent Successfully!");
+                                    }
+                                    function success_text() {
+                                     if(
+                                     document.getElementById("form_message").value==="") {
+                                     document.getElementById('button').disabled = true;
+                                     } else {
+                                     document.getElementById('button').disabled = false;
+                                     }}
+                                     function success_mail() {
+                                     if(
+                                     document.getElementById("form_email").value==="") {
+                                     document.getElementById('button').disabled = true;
+                                     } else {
+                                     document.getElementById('button').disabled = false;
+                                     }}
+                                     function success_mail() {
+                                     if(
+                                     document.getElementById("form_name").value==="") {
+                                     document.getElementById('button').disabled = true;
+                                     } else {
+                                     document.getElementById('button').disabled = false;
+                                     }}
+                                    </script>
                                 </div>
                             </div>
                         </div>

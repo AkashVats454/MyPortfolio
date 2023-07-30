@@ -28,7 +28,7 @@ DEBUG = True
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'akashmishra454@gmail.com'
-
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 ALLOWED_HOSTS = [
     'https://akashtesting.herokuapp.com',
