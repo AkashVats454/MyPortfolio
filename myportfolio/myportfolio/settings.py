@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     'http://akashtesting.herokuapp.com',
     'akashtesting.herokuapp.com',
     '127.0.0.1',
+    '43.204.98.64',
 ]
 
 
